@@ -1,6 +1,4 @@
 from rest_framework import permissions
-from rest_framework.decorators import action
-from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 
 from api.models import Habit, HabitRecord
