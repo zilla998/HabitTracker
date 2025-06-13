@@ -10,4 +10,4 @@ class HabitAdmin(admin.ModelAdmin):
 
 @admin.register(HabitRecord)
 class HabitRecordAdmin(admin.ModelAdmin):
-    fields = ('id', 'habit', 'date', 'done')
+    fields = ('habit', 'date', 'done')
