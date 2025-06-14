@@ -1,4 +1,4 @@
-from rest_framework import permissions, status
+from rest_framework import permissions, status, generics
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.viewsets import ModelViewSet
@@ -38,7 +38,10 @@ class HabitRecordViewSet(ModelViewSet):
 
 
 
-class RegisterView(APIView):
+class RegisterView(generics.CreateAPIView):
+    serializer_class = RegisterSerializer
+    permission_classes = [permissions.AllowAny]
+
     def post(self, request):
         serializer =RegisterSerializer(data=request.data)
         if serializer.is_valid():
